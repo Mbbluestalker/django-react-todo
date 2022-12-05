@@ -1,11 +1,14 @@
 import ListGroup from "react-bootstrap/ListGroup";
 
-export default function TodoList() {
+export default function TodoList({todos = []}) {
+  const renderListGroupItem = (todo) => {
+    
+  }
     return <ListGroup>
-    <ListGroup.Item>Cras justo odio</ListGroup.Item>
-    <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-    <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-    <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-    <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+      {todos.map( todo => {
+        return <ListGroup.Item key={todo.id}>
+          {todo.name}
+        </ListGroup.Item>
+      })}
   </ListGroup>
 }
